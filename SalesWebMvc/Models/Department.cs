@@ -16,5 +16,6 @@
         {
             return Sellers.Sum(s => s.totalSales(initial, final));
         }
+
     }
 }

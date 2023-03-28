@@ -11,5 +11,6 @@ namespace SalesWebMvc.Models
 
         public int SellerId { get; set; }
         public Seller Seller { get; set; }
+
     }
 }

@@ -13,6 +13,7 @@
 
         public List<SalesRecord> SalesRecords { get; set; }
 
+
         public void addSales(SalesRecord sale)
         {
             SalesRecords.Add(sale);

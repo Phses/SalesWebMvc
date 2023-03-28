@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Data;
 using SalesWebMvc.Models.ViewModels;
 using System.Diagnostics;
 
@@ -7,14 +8,17 @@ namespace SalesWebMvc.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly SeedingService _seedingService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, SeedingService seedingService)
         {
             _logger = logger;
+            _seedingService = seedingService;
         }
 
         public IActionResult Index()
         {
+            _seedingService.Seed();
             return View();
         }
 
