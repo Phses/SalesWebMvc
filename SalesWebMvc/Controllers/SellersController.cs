@@ -61,8 +61,15 @@ namespace SalesWebMvc.Controllers
         [HttpPost()]
         public async Task<IActionResult> Delete(int id)
         {
-            await _sellerService.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _sellerService.DeleteAsync(id);
+                return RedirectToAction(nameof(Index));
+
+            }catch(IntegrityException e)
+            {
+                return RedirectToAction(nameof(Error), new { Message = e.Message});
+            }
         }
 
         [HttpGet()]
