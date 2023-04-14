@@ -12,6 +12,7 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<SalesRecordService>();
 
 const string defaultCulture = "en-US";
 var supportedCultures = new[]
